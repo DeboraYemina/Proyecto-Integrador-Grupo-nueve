@@ -1,0 +1,8 @@
+:root{
+    /*Palette*/
+    --primary-solid: #FF3333;
+    --primary-900:rgba(255, 51, 51, 0.9);
+    --primary-500:rgba(255, 51, 51, 0.5);
+    --primary-300:rgba(255, 51, 51, 0.3);
+
+}

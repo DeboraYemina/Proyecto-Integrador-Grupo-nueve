@@ -347,6 +347,20 @@ header{
     font-weight: 700;
 }
 
+/*Footer*/
+
+.footer{
+    background-color: var(--dark-bg-solid);
+    padding: var(--spacing-68);
+}
+
+.footer__copy{
+    text-align: center;
+    margin: var(--spacing-36);
+}
+
+/*Animations*/
+
 @keyframes fade{
     0%{
         opacity: 0;

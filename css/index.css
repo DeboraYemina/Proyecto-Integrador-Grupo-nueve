@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400&family=Raleway:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Raleway&display=swap');
 
 :root{
     /*Palette*/
@@ -36,9 +36,11 @@
     --font-medium: 1.8em;
     --font-small: 1.6em;
     --font-xsmall: 1.4em;
+    --font-xxsmall: 1em;
 
     /*Spacings*/
 
+    --spacing-152:15.2rem;
     --spacing-128:12.8rem;
     --spacing-68:6.8rem;
     --spacing-36:3.6rem;
@@ -48,6 +50,7 @@
     --spacing-16:1.6rem;
     --spacing-12:1.2rem;
     --spacing-8:0.8rem;
+    --spacing-4:0.4rem;
 }
 
 *,
@@ -193,6 +196,7 @@ header{
     font-family: var(--alternative-font);
     font-size: var(--font-jumbo);
     color: var(--light-font-solid);
+    font-weight: 700;
 }
 
 .hero__text{
@@ -357,6 +361,119 @@ header{
 .footer__copy{
     text-align: center;
     margin: var(--spacing-36);
+}
+
+/*Shop*/
+
+.shop{
+    display: flex;
+    flex-direction: row;
+}
+
+.shop__form{
+    margin: var(--spacing-68) auto;
+}
+
+.shop__title{
+    font-size: var(--font-medium);
+    text-transform: uppercase;
+    padding-bottom: var(--spacing-8);
+}
+
+.shop__sector{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--spacing-12);
+}
+
+#busqueda{
+    padding-left: 4px;
+}
+
+#ordenar{
+    color: gray;
+}
+
+#ordenar:focus {
+    color: var(--dark-solid); 
+}
+
+.bordes{
+    border: 2px solid var(--dark-bg-solid);
+    border-radius: 3px;
+}
+
+.shop-input
+{
+    height: var(--spacing-28);
+    width: var(--spacing-152);
+}
+
+.shop__input-number{
+    text-align: center;
+    width: var(--spacing-36);
+    height: var(--spacing-16);
+}
+
+#precio_min,
+#precio_max{
+    color: gray;
+}
+
+#precio_min:focus,
+#precio_max:focus {
+    color: var(--dark-solid); 
+}
+
+
+/* Estilo para ocultar el input nativo */
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+/* Contenedor para alinear elementos horizontalmente */
+.custom-checkbox {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-left: var(--spacing-8);  
+    margin-top: var(--spacing-4); /* Espacio superior */
+    margin-bottom: var(--spacing-4); /* Espacio inferior */
+}
+
+/* Estilo para el checkbox personalizado */
+.custom-checkbox label {
+    position: relative; /* Establece posición relativa */
+    padding-left: var(--spacing-24); /* Espacio a la izquierda para el cuadro azul o el tilde */
+    display: inline-flex; /* Alinea elementos en línea */
+    align-items: center; /* Alinea verticalmente elementos en línea */
+}
+
+/* Estilo para el cuadro azul o el tilde */
+.custom-checkbox label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+	width: var(--spacing-16);
+    height: var(--spacing-16);
+    border: 2px solid var(--dark-bg-solid);
+    border-radius: 3px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    background-color: white; /* Fondo del cuadro azul o el tilde */
+}
+
+/* Estilo para el checkbox personalizado cuando está marcado */
+.custom-checkbox input[type="checkbox"]:checked + label::before {
+    content: "\2714"; /* Código Unicode para el tilde negro */
+    font-size: var(--font-xxsmall); /* Tamaño de fuente del tilde */
+    text-align: center;
+    background-color: transparent; /* Fondo transparente cuando está marcado */
+    border-color: var(--dark-bg-solid); /* Color del borde del tilde */
+}
+
+.checkbox-text{
+    font-size: var(--font-xxsmall);
 }
 
 /*Animations*/

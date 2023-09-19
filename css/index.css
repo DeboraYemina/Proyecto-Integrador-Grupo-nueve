@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Raleway&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css');
+@import url('https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css');
 
 :root{
     /*Palette*/
@@ -288,9 +290,12 @@ header{
     text-transform: uppercase;
 }
 
-.slider__items{
-    display: flex;
-    gap: var(--spacing-24);
+.glide__arrow--left{
+    left: 0;
+}
+
+.glide__arrow--right{
+    right: 0;
 }
 
 .card-item__cover{
@@ -331,7 +336,8 @@ header{
     padding: var(--spacing-16);
 }
 
-.card-item__license{
+.card-item__license, 
+.item__license{
     font-size: var(--font-xsmall);
     font-weight: 500;
 }
@@ -475,6 +481,69 @@ header{
 .checkbox-text{
     font-size: var(--font-xxsmall);
 }
+
+/*ITEM*/
+
+.item {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+.item__img {
+    margin-right: var(--spacing-68);
+}
+
+.item__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+  
+.item__info *{
+    margin-bottom: var(--spacing-12);
+}
+
+.item__name{
+    font-weight: 700;
+    font-size: var(--font-jumbo);
+}
+
+.item__description{
+    font-size: var(--font-large);
+}
+
+.item__price{
+    font-size: var(--font-jumbo);
+}
+
+.item__cart {
+    display: flex;
+    align-items: center;
+}
+
+.item__cart *{
+    margin-bottom: 0;
+}
+
+.item__quantity-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item__input {
+    width: 50px; /* Ancho deseado para el input quantity */
+    height: 40px; /* Altura deseada para el input quantity (puedes ajustar este valor) */
+    /* Añade otros estilos según sea necesario */
+}
+
+.item__quantity {
+    height: 20px; /* Altura deseada para los botones add y substract (puedes ajustar este valor) */
+    /* Añade estilos adicionales para los botones según sea necesario */
+}
+
+
 
 /*Animations*/
 

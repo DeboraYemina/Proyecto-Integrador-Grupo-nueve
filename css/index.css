@@ -44,6 +44,7 @@
 
     --spacing-152:15.2rem;
     --spacing-128:12.8rem;
+    --spacing-105:10.5rem;
     --spacing-68:6.8rem;
     --spacing-36:3.6rem;
     --spacing-28:2.8rem;
@@ -351,7 +352,8 @@ header{
     font-size: var(--font-small);
 }
 
-.card-item__promo{
+.card-item__promo,
+.item__promo{
     font-size: var(--font-xsmall);
     color: var(--secondary-solid);
     font-weight: 700;
@@ -486,22 +488,44 @@ header{
 
 .item {
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column; /* Por defecto, apilamos elementos en pantallas pequeñas */
+    align-items: center; /* Centra el contenido horizontalmente */
+    padding: var(--spacing-68) 0; /* Espacio en la parte superior e inferior */
+    text-align: center; /* Centra el texto horizontalmente */
 }
 
-.item__img {
-    margin-right: var(--spacing-68);
+@media (min-width: 768px) {
+    .item {
+        flex-direction: row; /* Cambiamos a dirección de fila en pantallas más grandes */
+        justify-content: space-between; /* Espacio entre el picture y el article */
+        text-align: left; /* Alinea el texto a la izquierda */
+    }
+
+    .item__img {
+        margin-bottom: 0; /* Eliminamos el espacio entre la imagen y el texto en pantallas más grandes */
+        flex: 1;
+    }
 }
 
 .item__info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    margin-left: var(--spacing-68);
+    flex: 1;
 }
-  
+
 .item__info *{
     margin-bottom: var(--spacing-12);
+}
+
+.item__img img {
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor picture */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+    object-fit: cover; /* La imagen cubrirá todo el espacio del contenedor sin distorsionarse */
+}
+
+.item__submit{
+    border: none;
+    position: relative;
+    margin-left: var(--spacing-24);
 }
 
 .item__name{
@@ -519,30 +543,36 @@ header{
 
 .item__cart {
     display: flex;
-    align-items: center;
-}
-
-.item__cart *{
-    margin-bottom: 0;
 }
 
 .item__quantity-buttons {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .item__input {
-    width: 50px; /* Ancho deseado para el input quantity */
-    height: 40px; /* Altura deseada para el input quantity (puedes ajustar este valor) */
-    /* Añade otros estilos según sea necesario */
+    text-align: center;
+    width: var(--spacing-105);
+    border: 0.5px solid #C9C9C9;
+    font-size: var(--font-large);
+    margin-right: var(--spacing-8);
 }
 
 .item__quantity {
-    height: 20px; /* Altura deseada para los botones add y substract (puedes ajustar este valor) */
-    /* Añade estilos adicionales para los botones según sea necesario */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; 
+    width: var(--spacing-16);
+    height: var(--spacing-16);
+    background: #4F4F4F;
+    font-size: var(--font-small);
+    color: var(--light-bg-solid);
+    margin: 0.1em;
 }
 
+.item__promo a{
+    text-decoration: underline;
+}
 
 
 /*Animations*/

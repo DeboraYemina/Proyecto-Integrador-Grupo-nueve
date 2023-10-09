@@ -30,6 +30,7 @@
   --font-jumbo: 3.8em;
   --font-xlarge: 3em;
   --font-large: 2.4em;
+  --font-normal: 2em;
   --font-medium: 1.8em;
   --font-small: 1.6em;
   --font-xsmall: 1.4em;
@@ -99,7 +100,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: --spac;
 }
 
 .navbar__logo {
@@ -337,7 +337,20 @@ header {
   font-weight: 700;
 }
 
+/*  FOOTER  */
 
+.footer {
+  background-color: var(--dark-bg-solid);
+  padding: var(--spacing-68);
+}
+
+.footer__copy {
+  margin-top: var(--spacing-36);
+  text-align: center;
+  font-size: var(--font-normal);
+}
+
+/*  ANIMATIONS  */
 
 @keyframes fade {
   0%{
